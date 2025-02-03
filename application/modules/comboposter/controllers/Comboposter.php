@@ -51,11 +51,11 @@ class Comboposter extends Home
         /* load libraries */
         $this->load->library('Google_youtube_login', NULL, 'google');
         $this->load->library('Twitter');
-        // $this->load->library('Tumblr');
+        // $this->load->library('Tiktok');
         $this->load->library('Linkedin');
-        $this->load->library('Medium');
-        $this->load->library('Pinterests', NULL, 'pinterest');
-        $this->load->library('Reddit');
+        $this->load->library('Whatapp');
+        $this->load->library('Telegram', NULL, 'telegram');
+        $this->load->library('Line');
         $this->load->library('Wp_org_poster', NULL, 'wordpress');
         $this->load->library('Wordpress_self_hosted', NULL, 'wordpress_self_hosted');
 
@@ -66,10 +66,11 @@ class Comboposter extends Home
         $data['youtube_login_button'] = $this->google->youtube_login_button($redirect_url. '/youtube');
         $data['blogger_login_button'] = $this->google->blogger_login_button($redirect_url. '/blogger');
         $data['twitter_login_button'] = $this->twitter->login_button($redirect_url. '/twitter');
-        // $data['tumblr_login_button'] = $this->tumblr->login_button($redirect_url. '/tumblr');
+         $data['tiktok_login_button'] = $this->tiktok->login_button($redirect_url. '/tiktok');
         $data['linkedin_login_button'] = $this->linkedin->login_button($redirect_url. '/linkedin');
-        // $data['medium_login_button'] = $this->medium->login_button($redirect_url. '/medium');
-        $data['reddit_login_button'] = $this->reddit->login_button($redirect_url. '/reddit');
+        // $data['whatapp_login_button'] = $this->whatapp->login_button($redirect_url. '/whatapp');
+
+    $data['line_login_button'] = $this->lije->login_button($redirect_url. '/line');
         $data['wordpress_login_button'] = $this->wordpress->login_button($redirect_url. '/wordpress');
         $data['wordpress_self_hosted_login_button'] = $this->wordpress_self_hosted->login_button();
         $data['pinterest_login_button'] = "<a href='". base_url('social_apps/pinterest_settings') ."' class='btn btn-outline-primary login_button' social_account='pinterest'><i class='fas fa-plus-circle'></i> ".$this->lang->line("Import Account")."</a>";;
